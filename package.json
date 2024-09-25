@@ -12,10 +12,14 @@
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@clerk/clerk-react": "^5.9.0",
+    "@clerk/themes": "^2.1.30",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@supabase/supabase-js": "^2.45.4",
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.3.0",
@@ -25,6 +29,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
+    "react-spinners": "^0.14.1",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },

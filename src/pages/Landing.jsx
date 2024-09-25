@@ -18,16 +18,29 @@ import {
 } from "@chakra-ui/react";
 import companies from "../Data/companies.json";
 import faq from "../Data/Faq.json";
-
 import { Link } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
-import banner from "../../public/companies/banner.jpeg";
+import banner from "../../public/companies/banner.png";
+import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-with-collision";
+import BlurIn from "../components/magicui/blur-in";
 const Landing = () => {
   return (
     <main>
       <section className=" text-center mt-10">
-        <h1 className="text-6xl">Find Your Dream Job</h1>
-        <span className="text-6xl">And Get Hired</span>
+        {/* <h1 className="text-6xl">Find Your Dream Job</h1>
+        <span className="text-6xl">And Get Hired</span> */}
+        <BackgroundBeamsWithCollision>
+          <h2 className="text-2xl flex flex-col  relative z-0 md:text-4xl lg:text-7xl font-bold text-center text-white dark:text-white font-sans tracking-tight">
+            <span>
+              <BlurIn word={"Find Your Dream Job"} />{" "}
+            </span>
+            <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+              <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                <span className=""> And Get Hired</span>
+              </div>
+            </div>
+          </h2>
+        </BackgroundBeamsWithCollision>
       </section>
       <div className="flex justify-center gap-6 mt-10">
         <Link to="/jobs">
@@ -80,7 +93,14 @@ const Landing = () => {
         <img src={banner} />
       </div>
       <section className="flex gap-4 m-4 ">
-        <Card className="w-[50%]" variant={"outline"}>
+        <Card
+          className="w-[50%] "
+          variant={"outline"}
+          style={{
+            background: "transparent",
+            color: "white",
+          }}
+        >
           <CardHeader className="bg-none">
             <Heading size="md">For Job Seekers</Heading>
           </CardHeader>
@@ -88,16 +108,25 @@ const Landing = () => {
             <p>Search and apply for jobs, track applications, and more.</p>
           </CardBody>
         </Card>
-        <Card className="w-[50%]">
+        <Card
+          className="w-[50%]"
+          variant={"outline"}
+          style={{
+            background: "transparent",
+            color: "white",
+          }}
+        >
           <CardHeader>
             <Heading size="md">For Employers</Heading>
           </CardHeader>
           <CardBody>
-            <p>Pst jobs, manage applications, and find the best candidates.</p>
+            <p>Post jobs, manage applications, and find the best candidates.</p>
           </CardBody>
         </Card>
       </section>
-
+      {/* <div className="z-10 flex min-h-[16rem] items-center justify-center rounded-lg border  dark:bg-black">
+        <TextRevealByWord text="Believe in your abilities—ProHirred is here to help you shine in the job market!" />
+      </div> */}
       {/* accordian  */}
 
       <section className="m-4 mt-10">
