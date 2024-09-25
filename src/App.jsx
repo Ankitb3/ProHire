@@ -9,7 +9,7 @@ import SavedJobs from "./pages/SavedJobs";
 import Jobspage from "./pages/Jobspage";
 import AppliedJobs from "./pages/AppliedJobs";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import "./App.css";
 const router = createBrowserRouter([
   {
     element: <AppLayouts />,
