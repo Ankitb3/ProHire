@@ -16,7 +16,7 @@ import {
   CardHeader,
   Heading,
 } from "@chakra-ui/react";
-import companies from "../Data/companies.json";
+import companies from "../Data/Companies.json";
 import faq from "../Data/Faq.json";
 import { Link } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
