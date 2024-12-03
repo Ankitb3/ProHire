@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import { Select } from "@chakra-ui/react";
+import ApplyJobDrawer from "../components/ApplyJob";
 
 const JobPage = () => {
   const { isLoaded, user } = useUser();
@@ -43,7 +44,7 @@ const JobPage = () => {
         </h1>
         <img src={job?.company?.logo_url} alt={job?.title} className="h-12" />
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between m-2">
         <div className="flex gap-2">
           <MapPinIcon />
           {job?.location}
@@ -83,15 +84,24 @@ const JobPage = () => {
           </option>
         </Select>
       )}
-      <h2>About the job</h2>
-      <p>{job?.description}</p>
-      <h2>We are looking for</h2>
+      <h2 className="text-4xl font-semibold ms-2">About the job</h2>
+      <p className="text-semibold ms-2 text-xl">{job?.description}</p>
+      <h2 className="text-2xl font-semibold ms-2">We are looking for</h2>
       <div className=" m-2 p-1">
         <MDEditor.Markdown
           source={job?.requirements}
           className=" bg-white sm:text-lg list-disc"
         />
       </div>
+
+      {job?.recruiter_id !== user?.id && (
+        <ApplyJobDrawer
+          job={job}
+          user={user}
+          fetchJob={fnJob}
+          applied={job?.applications?.find((ap) => ap.candidate_id === user.id)}
+        />
+      )}
     </div>
   );
 };

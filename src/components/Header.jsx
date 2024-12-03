@@ -51,7 +51,7 @@ const Header = () => {
             </Button>
           </SignedOut>
           <SignedIn>
-            {user?.unsafeMetadata?.role && (
+            {user?.unsafeMetadata?.role === "recruiter" && (
               <button className="m-2 relative bottom-2 bg-red-700  text-white font-semibold p-2 rounded gap-2">
                 <span className="flex">
                   {" "}

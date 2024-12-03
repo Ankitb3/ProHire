@@ -60,7 +60,7 @@ const JobCard = ({
 
           <CardDescription>
             <p className="text-white text-lg mt-10">
-              {job.description.substring(0, job.description.indexOf("."))}
+              {job?.description?.substring(0, job.description.indexOf("."))}
             </p>
           </CardDescription>
         </CardContent>
