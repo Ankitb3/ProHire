@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import { Select } from "@chakra-ui/react";
 import ApplyJobDrawer from "../components/ApplyJob";
+import ApplicationCard from "../components/ApplicationCard";
 
 const JobPage = () => {
   const { isLoaded, user } = useUser();
@@ -101,6 +102,16 @@ const JobPage = () => {
           fetchJob={fnJob}
           applied={job?.applications?.find((ap) => ap.candidate_id === user.id)}
         />
+      )}
+      {job?.applications?.length > 0 && job?.recruiter_id === user?.id && (
+        <div>
+          <h2 className="text-bold text-4xl text-center">Applications</h2>
+          {job?.applications.map((application) => {
+            return (
+              <ApplicationCard key={application.id} application={application} />
+            );
+          })}
+        </div>
       )}
     </div>
   );
