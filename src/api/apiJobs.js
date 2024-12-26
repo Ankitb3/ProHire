@@ -76,3 +76,17 @@ export async function updateHiringStatus(token,{job_id},isOpen){
 }
 return data
 }
+
+
+export async function addNewJob(token,_,jobData){
+    const supbase = await supabaseClient(token)
+    
+     const {data,error} = await supbase.from('jobs')
+     .insert([jobData])
+     .select();
+     if(error){
+         console.log("Error Crating job",error);
+         return null
+}
+return data
+}
